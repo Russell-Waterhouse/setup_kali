@@ -11,10 +11,14 @@ sudo ./pimpmykali.sh
 # This step assumes you choose to use root login in the 
 # previous step
 sudo apt install docker.io
-# TODO: echo the rustscan alias into the .rc files
+sudo echo "alias rustscan='docker run -it --rm --name rustscan rustscan/rustscan:1.10.0'" >> /root/.bashrc
+sudo echo "alias rustscan='docker run -it --rm --name rustscan rustscan/rustscan:1.10.0'" >> /root/.zshrc
 
 # install updog
 pip3 install updog
 
-# TODO: add linpeas
-
+# add linpeas, ready to be deployed to target machines
+sudo mkdir /root/src
+sudo cd /root/src
+sudo curl -L https://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas.sh > linpeas.sh
+sudo chmod +x linpeas.sh
