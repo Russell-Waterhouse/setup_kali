@@ -10,7 +10,7 @@ sudo ./pimpmykali.sh
 # Setting up rustscan using docker
 # This step assumes you choose to use root login in the 
 # previous step
-sudo apt install docker.io
+sudo apt install -y docker.io
 sudo echo "alias rustscan='docker run -it --rm --name rustscan rustscan/rustscan:1.10.0'" >> /root/.bashrc
 sudo echo "alias rustscan='docker run -it --rm --name rustscan rustscan/rustscan:1.10.0'" >> /root/.zshrc
 
